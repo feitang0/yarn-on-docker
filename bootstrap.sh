@@ -1,6 +1,24 @@
 #!/bin/bash
 
+echo '172.17.64.0	master' >> /etc/hosts
+echo '172.17.64.1	slave1' >> /etc/hosts
+echo '172.17.64.2	slave2' >> /etc/hosts
+echo '172.17.64.3	slave3' >> /etc/hosts
+echo '172.17.128.0	slave4' >> /etc/hosts
+echo '172.17.128.1	slave5' >> /etc/hosts
+echo '172.17.128.2	slave6' >> /etc/hosts
+echo '172.17.128.3	slave7' >> /etc/hosts
+
 : ${HADOOP_PREFIX:=/usr/local/hadoop}
+
+echo 'slave1' >  $HADOOP_PREFIX/etc/hadoop/slaves
+echo 'slave2' >> $HADOOP_PREFIX/etc/hadoop/slaves
+echo 'slave3' >> $HADOOP_PREFIX/etc/hadoop/slaves
+echo 'slave4' >> $HADOOP_PREFIX/etc/hadoop/slaves
+echo 'slave5' >> $HADOOP_PREFIX/etc/hadoop/slaves
+echo 'slave6' >> $HADOOP_PREFIX/etc/hadoop/slaves
+echo 'slave7' >> $HADOOP_PREFIX/etc/hadoop/slaves
+
 
 $HADOOP_PREFIX/etc/hadoop/hadoop-env.sh
 
