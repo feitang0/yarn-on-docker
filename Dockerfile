@@ -28,8 +28,8 @@ ENV JAVA_HOME /usr/java/default
 ENV PATH $PATH:$JAVA_HOME/bin
 
 # spark
-RUN curl -s http://mirror.bit.edu.cn/apache/spark/spark-1.5.2/spark-1.5.2-bin-hadoop2.6.tgz | tar -zxv -C /usr/local/
-RUN cd /usr/local && ln -s ./spark-1.5.2-bin-hadoop2.6 spark
+RUN curl -s http://mirror.bit.edu.cn/apache/spark/spark-1.3.1/spark-1.3.1-bin-hadoop2.6.tgz | tar -zxv -C /usr/local/
+RUN cd /usr/local && ln -s ./spark-1.3.1-bin-hadoop2.6 spark
 
 # hadoop
 RUN curl -s http://mirror.bit.edu.cn/apache/hadoop/common/hadoop-2.6.2/hadoop-2.6.2.tar.gz | tar -xz -C /usr/local/
