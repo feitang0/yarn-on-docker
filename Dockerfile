@@ -12,8 +12,8 @@ RUN yum install -y curl which tar sudo openssh-server openssh-clients rsync
 # update libselinux. see https://github.com/sequenceiq/hadoop-docker/issues/14
 RUN yum update -y libselinux
 
-RUN yum install -y python-devel python-nose python-setuptools gcc gcc-gfortran gcc-c++ blas-devel lapack-devel atlas-devel
-RUN yum install -y numpy scipy
+# RUN yum install -y python-devel python-nose python-setuptools gcc gcc-gfortran gcc-c++ blas-devel lapack-devel atlas-devel
+# RUN yum install -y numpy scipy
 
 # passwordless ssh
 RUN ssh-keygen -q -N "" -t dsa -f /etc/ssh/ssh_host_dsa_key
@@ -31,8 +31,8 @@ ENV JAVA_HOME /usr/java/default
 ENV PATH $PATH:$JAVA_HOME/bin
 
 # spark
-RUN curl -s http://mirror.bit.edu.cn/apache/spark/spark-1.3.1/spark-1.3.1-bin-hadoop2.6.tgz | tar -zxv -C /usr/local/
-RUN cd /usr/local && ln -s ./spark-1.3.1-bin-hadoop2.6 spark
+RUN curl -s http://mirror.bit.edu.cn/apache/spark/spark-1.5.2/spark-1.5.2-bin-hadoop2.6.tgz | tar -zxv -C /usr/local/
+RUN cd /usr/local && ln -s ./spark-1.5.2-bin-hadoop2.6 spark
 
 # hadoop
 RUN curl -s http://mirror.bit.edu.cn/apache/hadoop/common/hadoop-2.6.2/hadoop-2.6.2.tar.gz | tar -xz -C /usr/local/
